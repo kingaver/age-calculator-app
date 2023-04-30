@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+html body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(0, 0%, 86%);
+}
+form {
+    font-family: Poppins;
+}
+
+label {
+    font-size: 12px;
+    color: hsl(0, 1%, 44%);
+}
+
+img {
+    width: 40px;
+}
+
+.container  {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    height: 420px;
+    margin: auto;
+    width: 90%;
+    background-color: white;
+    max-width: 500px;
+    min-width: 330px;
+    border-radius: 12px;
+    border-bottom-right-radius: 110px;
+}
+
+.entry {
+    display: flex;
+    padding: 20px;
+}
+
+.form-inline {
+    display: flex;
+    gap: 15px;
+}
+
+input[type=number] {
+    width: 90px;
+    font-weight: bold;
+    font-size: 28px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid hsl(0, 0%, 86%);
+    padding: 5px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]:focus {
+    outline: 2px solid hsl(259, 100%, 65%);
+}
+
+.submit-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+}
+
+.submit-btn:hover {
+background-color: hsl(0, 0%, 8%);
+cursor: pointer;
+}
+
+.submit-btn:active {
+    background-color: hsl(259, 100%, 65%);
+    border: hsl(259, 100%, 65%);
+}
+
+.date {
+    font: bold italic 50px Poppins;
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.submit-bar {
+    display: flex;
+    align-items: center;
+}
+
+.divider-b4 {
+    border: 1px solid lightgray;
+    margin: 20px;
+    margin-right: 0;
+    width: 80%;
+    height: 0;
+}
+
+.divider-af {
+    border: 1px solid lightgray;
+    margin: 10px;
+    margin-right: 0;
+    width: 0;
+    height: 0;
+}
+
+@media screen and (max-width: 375px) {
+    .divider-b4 {width: 33.3%;}
+    .divider-af {width: 33.3%;
+        margin-left: 0;
+        margin-right: 15px;
+    }
+    input[type=number] {width: 70px;}
+    .entry {justify-content: space-around;}
+  }

@@ -13,25 +13,44 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <div class="entry">
+      <form class="form-inline">
+        <div>
+        <label for="day">DAY</label><br>
+        <input type="number" id="day" name="day" placeholder="DD"><br>
+        </div>
+        <div>
+        <label for="lname">MONTH</label><br>
+        <input type="number" id="month" name="month" placeholder="MM"><br>
+        </div>
+        <div>
+        <label for="lname">YEAR</label><br>
+        <input type="number" id="year" name="year" placeholder="YYYY"><br>
+        </div>
+        
+      </form>       
+    </div>
+    <div class="submit-bar">
+    <div class="divider-b4"></div>
+    <button class="submit-btn" onclick="displayDate()"><img src="./assets/images/icon-arrow.svg"></button>
+    <div class="divider-af"></div>
+    </div>
+    <div class="output">
 
-  Day
-  DD
-
-  Month
-  MM
-
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
+    <div class="year date" id="display-yrs"><span style="color: hsl(259, 100%, 65%);">--</span> years</div>
+    <div class="month date" id="display-mos"><span style="color: hsl(259, 100%, 65%);">--</span> months</div>
+    <div class="day date" id="display-days"><span style="color: hsl(259, 100%, 65%);">--</span> days</div>
+    </div>
+  </div>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <script src="index.js"></script>
 </body>
 </html>

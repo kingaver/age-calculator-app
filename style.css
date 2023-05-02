@@ -126,3 +126,7 @@ cursor: pointer;
     input[type=number] {width: 70px;}
     .entry {justify-content: space-around;}
   }
+
+  .error:active {
+    outline: 2px solid red;
+  }

@@ -127,6 +127,6 @@ cursor: pointer;
     .entry {justify-content: space-around;}
   }
 
-  .error:active {
-    outline: 2px solid red;
+  .error {
+    outline-color: red;
   }

@@ -13,6 +13,11 @@ function displayDate() {
         document.getElementById('day').classList.add("error");
         console.log(document.getElementById('day').classList);
     }
+    console.log(user_day.value);
+    document.getElementById('day').value = "";
+    user_mo.value = '00'; 
+    user_yr.value = '00'; 
+    console.log(user_day.value);
 }
 
 /*  date_2 = date entered 

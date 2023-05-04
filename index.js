@@ -1,6 +1,7 @@
 function displayDate() {
     today = new Date();
     day = today.getDay();
+    // These are strings, not the fucking element!
     user_day = document.getElementById('day').value.toString();
     user_mo = document.getElementById('month').value.toString();
     user_yr = document.getElementById('year').value.toString();
@@ -13,11 +14,10 @@ function displayDate() {
         document.getElementById('day').classList.add("error");
         console.log(document.getElementById('day').classList);
     }
-    console.log(user_day.value);
+    // Clear the fields
     document.getElementById('day').value = "";
-    user_mo.value = '00'; 
-    user_yr.value = '00'; 
-    console.log(user_day.value);
+    document.getElementById('month').value = ''; 
+    document.getElementById('year').value = ''; 
 }
 
 /*  date_2 = date entered 

@@ -13,8 +13,12 @@ function isBefore (user_month, user_day, month, day) {
     }
 }
 
-function month_delta(user_month, month) {
-    
+function month_delta(user_month, user_day, month, day) {
+    if (isBefore(user_month, user_day, month, day)) {
+
+    }else {
+        
+    }
 }
 
 function displayDate() {

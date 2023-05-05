@@ -1,11 +1,9 @@
 function isBefore (user_month, user_day, month, day) {
-    console.log(user_day);
-    console.log(day);
     // Returning "True" from this function means that the user's month/day
     // came before the current month/day, meaning that the age_year needs to
     // have 1 subtracted from it.
     if (month == user_month) {
-        if (user_day < day) {
+        if (user_day > day) {
             return true;
         }
     } else if (user_month > month) {
@@ -15,10 +13,14 @@ function isBefore (user_month, user_day, month, day) {
     }
 }
 
+function month_delta(user_month, month) {
+    
+}
+
 function displayDate() {
     today = new Date();
     day = today.getDay();
-    month = today.getMonth();
+    month = today.getMonth() + 1;
     year = today.getFullYear();
     // These are strings, not the fucking element!
     user_day = document.getElementById('day').value;
@@ -30,12 +32,10 @@ function displayDate() {
     }
     // Clear the fields
     age_year = year - user_yr;
-    age_month = 
+    age_month = (month - user_mo)%12;
     if (isBefore(user_mo, user_day, month, day)) {
         age_year -= 1;
     }
-    console.log(year);
-    console.log(user_yr);
     document.getElementById('day').value = '';
     document.getElementById('month').value = ''; 
     document.getElementById('year').value = ''; 
@@ -45,6 +45,7 @@ function displayDate() {
     }
     console.log(age_year);
     document.getElementById('display-yrs').innerHTML = `<span style="color: hsl(259, 100%, 65%);">${age_year}</span> years`
+    document.getElementById('display-mos').innerHTML = `<span style="color: hsl(259, 100%, 65%);">${age_month}</span> months`
 }
 
 

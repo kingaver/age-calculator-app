@@ -23,6 +23,7 @@ function month_delta(user_month, user_day, month, day) {
 
 function displayDate() {
     today = new Date();
+    console.log(today);
     day = today.getDay();
     month = today.getMonth() + 1;
     year = today.getFullYear();
@@ -35,8 +36,10 @@ function displayDate() {
         console.log(document.getElementById('day').classList);
     }
     // Clear the fields
+    console.log(`month: ${month}`);
+    console.log(user_mo);
     age_year = year - user_yr;
-    age_month = (month - user_mo)%12;
+    age_month = 11 - Math.abs(month - user_mo);
     if (isBefore(user_mo, user_day, month, day)) {
         age_year -= 1;
     }

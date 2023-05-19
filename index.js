@@ -23,24 +23,44 @@ function month_delta(user_month, user_day, month, day) {
     }
 }
 
-function calcDays(day, user_day, user_month, year) {
+function calcDays(day, user_day, user_month, year, age_month) {
     user_month += 1;
     var numDays = day;
     if (thirtyDays.includes(user_month)) {
-        numDays += (30 - day);     
+        numDays += (30 - day);   
+        if (numDays > 30) {
+            age_month += 1;
+            numDays -= 30; 
+        } 
     } else if (user_month != 02){
         console.log(`thirty-one days`);
         console.log(`${day}`);
         numDays += (31 - user_day);
+        if (numDays > 31) {
+            age_month += 1;
+            numDays -= 31;
+        }
     } else {
         if (year.toString().slice(-2) == "00") {
             if (year % 400 == 0) {
                 numDays += (29 - user_day)
+                if (numDays > 29) {
+                    age_month += 1;
+                    numDays -= 29; 
+                }
             } 
         } else if (year % 4 == 0) {
             numDays += (29 - user_day);
+            if (numDays > 29) {
+                age_month += 1;
+                numDays -= 29; 
+            }
         } else {
             numDays += (28 - user_day);
+            if (numDays > 28) {
+                age_month += 1;
+                numDays -= 28; 
+            }
         }
     }
     console.log(`numDays: ${numDays}`);
@@ -70,7 +90,7 @@ function displayDate() {
     if (isBefore(user_mo, user_day, month, day)) {
         age_year -= 1;
     }
-    age_days = calcDays(day, user_day, user_mo, year);
+    age_days = calcDays(day, user_day, user_mo, year, age_month);
     document.getElementById('day').value = '';
     document.getElementById('month').value = ''; 
     document.getElementById('year').value = ''; 

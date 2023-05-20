@@ -86,7 +86,7 @@ function displayDate() {
     console.log(`Day: ${day}`);
     console.log(user_mo);
     age_year = year - user_yr;
-    age_month = 11 - Math.abs(month - user_mo);
+    let age_month = 11 - Math.abs(month - user_mo);
     if (isBefore(user_mo, user_day, month, day)) {
         age_year -= 1;
     }

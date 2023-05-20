@@ -72,6 +72,9 @@ function displayDate() {
     BIRTH_DATE.month = document.getElementById('month').value;
     BIRTH_DATE.day = document.getElementById('day').value;
     BIRTH_DATE.year = document.getElementById('year').value;
+    const val_date_str = `${BIRTH_DATE.year}-${BIRTH_DATE.month}-${BIRTH_DATE.day}`;
+    const val_date = new Date(val_date_str);
+    console.log(BIRTH_DATE);
     AGE = calculateAge(todaysDate, BIRTH_DATE, AGE);
     document.getElementById('day').value = '';
     document.getElementById('month').value = ''; 
